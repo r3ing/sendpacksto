@@ -45,10 +45,10 @@
                                 <div class="product-img">
                                     <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->img1}}" alt="">
                                     <div class="product-label">
-                                        <!--<span class="sale">-30%</span>
+                                        <!--<span class="sale">-30%</span>-->
+                                        @if($product->create_at < 5)
                                             <span class="new">NEW</span>
-                                             strtotime($product->created_at)->diff(date('Y-m-d H:i:s'))
-                                        -->
+                                        @endif
                                     </div>
 
                                 </div>
@@ -61,7 +61,7 @@
                                         <!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
                                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
                                         <span>&nbsp;&nbsp;</span>
-                                        <button class="quick-view" onclick="window.location='{{ route('product-detail', [$product->id, $product->slug]) }}';"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
+                                        <button class="quick-view" onclick="window.location='{{ route('product-detail', [$product->identifier, $product->slug]) }}';"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
                                     </div>
                                 </div>
                             </div>

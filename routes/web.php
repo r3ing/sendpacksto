@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/', 'StoreController@index');
 
-Route::get('product/{id}/{slug}',[
+Route::get('product/{identifier}/{slug}',[
     'as' => 'product-detail',
     'uses' => 'StoreController@show'
 ]);
