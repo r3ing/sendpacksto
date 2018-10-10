@@ -25,7 +25,7 @@
                 <!-- LOGO -->
                 <div class="col-md-3">
                     <div class="header-logo">
-                        <a href="#" class="logo">
+                        <a href="{{ route('home') }}" class="logo">
                             <img src="{{ asset('themes/electro-master//img/logo.png') }}" alt="">
                         </a>
                     </div>
@@ -51,7 +51,7 @@
                 <!-- ACCOUNT -->
                 <div class="col-md-3 clearfix">
                     <div class="header-ctn">
-                        <!-- Wishlist -->
+                        <!-- Wishlist
                         <div>
                             <a href="#">
                                 <i class="fa fa-heart-o"></i>
@@ -59,9 +59,22 @@
                                 <div class="qty">2</div>
                             </a>
                         </div>
+                        -->
                         <!-- /Wishlist -->
 
                         <!-- Cart -->
+                        <div>
+                            <a href="{{  route('cart-show') }}">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>Your Cart</span>
+                                @if(\Session::has('cart') && sizeof(\Session::get('cart')) > 0)
+                                    <div class="qty"> {{ sizeof(\Session::get('cart')) }} </div>
+                                @endif
+                            </a>
+                        </div>
+                        <!-- /Cart -->
+
+                        <!-- Cart
                         <div class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                 <i class="fa fa-shopping-cart"></i>
@@ -106,7 +119,7 @@
                         </div>
                         <!-- /Cart -->
 
-                        <!-- Menu Toogle -->
+                        <!-- Menu Toogle 
                         <div class="menu-toggle">
                             <a href="#">
                                 <i class="fa fa-bars"></i>

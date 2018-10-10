@@ -167,4 +167,15 @@
 		});
 	}
 
+	//=============== Card Operations ==========//
+	$('.btn-update-item').on('click', function(e){
+		e.preventDefault();
+
+		var id = $(this).data('id'),
+			href = $(this).data('href'),
+			quantity = $('#product_' + id).val();
+
+		window.location.href = href + '/' + quantity;
+	});
+
 })(jQuery);

@@ -120,7 +120,7 @@
                     </ul>
                     </br>
                     <div class="add-to-cart">
-                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> A&ntilde;adir al carrito</button>
+                        <button class="add-to-cart-btn" onclick="window.location='{{ route('cart-add', $product[0]->identifier) }}';"><i class="fa fa-shopping-cart"></i> A&ntilde;adir al carrito</button>
                     </div>
                     <div class="add-to-cart">
                         <button class="come-back-btn" onclick="window.location='{{ route('home') }}';"><i class="fa fa-chevron-circle-left"></i> Regresar</button>

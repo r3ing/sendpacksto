@@ -37,10 +37,10 @@
                 <!-- /store top filter -->
 
                 <!-- store products -->
-                <div class="row col-md-12">
+                <div class="row">
                     @foreach($products as $product)
                         <!-- product -->
-                        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-3 col-xs-6">
                             <div class="product">
                                 <div class="product-img">
                                     <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->img1}}" alt="">
@@ -57,7 +57,7 @@
                                     <h3 class="product-name"><a href="#">{{ $product->name }}</a></h3>
                                     <h4 class="product-price">${{ $product->price }}</h4>
                                     <div class="product-btns">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i><span class="tooltipp">A&ntilde;adir al carrito</span></button>
+                                        <button class="add-to-cart-btn" onclick="window.location='{{ route('cart-add', $product->identifier) }}';"><i class="fa fa-shopping-cart"></i><span class="tooltipp">A&ntilde;adir al carrito</span></button>
                                         <!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
                                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
                                         <span>&nbsp;&nbsp;</span>

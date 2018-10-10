@@ -2192,11 +2192,12 @@ textarea.input {
 }
 
 
-/*================ btn back ============================*/
+/*================ btn come-back ============================*/
 
 .product-details .add-to-cart .come-back-btn {
   position: relative;
   border: 2px solid transparent;
+  width: 215px;
   height: 40px;
   padding: 0 30px;
   background-color: rgba(160, 166, 188, 0.69);
@@ -2222,6 +2223,7 @@ textarea.input {
 
 .product-details .add-to-cart .come-back-btn:hover {
   background-color: #FFF;
+  width: 232px;
   color: #D10024;
   border-color: #D10024;
   padding: 0px 30px 0px 50px;
@@ -2232,12 +2234,15 @@ textarea.input {
   visibility: visible;
 }
 
+/*================ end btn come-back ============================*/
 
 
-.product-details .add-to-cart .come-back-btn1 {
+/*================ btn come-back in cart ============================*/
+
+.come-back-btn {
   position: relative;
   border: 2px solid transparent;
-  width: 215px;
+
   height: 40px;
   padding: 0 30px;
   background-color: rgba(160, 166, 188, 0.69);
@@ -2249,7 +2254,7 @@ textarea.input {
   transition: 0.2s all;
 }
 
-.product-details .add-to-cart .come-back-btn1>i {
+.come-back-btn>i {
   position: absolute;
   left: 0;
   top: 0;
@@ -2261,14 +2266,60 @@ textarea.input {
   visibility: hidden;
 }
 
-.product-details .add-to-cart .come-back-btn1:hover {
+.come-back-btn:hover {
   background-color: #FFF;
   color: #D10024;
   border-color: #D10024;
   padding: 0px 30px 0px 50px;
 }
 
-.product-details .add-to-cart .come-back-btn1:hover>i {
+.come-back-btn:hover>i {
   opacity: 1;
   visibility: visible;
 }
+
+/*================ end btn come-back in cart ============================*/
+
+/*================ btn come-back in cart ============================*/
+
+.trash-cart-btn {
+  position: relative;
+  border: 2px solid transparent;
+
+  height: 40px;
+  padding: 0 30px;
+  background-color: #D10024;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.trash-cart-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  color: #D10024;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.trash-cart-btn:hover {
+  background-color: #FFF;
+  color: #D10024;
+  border-color: #D10024;
+  padding: 0px 30px 0px 50px;
+}
+
+.trash-cart-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*================ end btn come-back in cart ============================*/
+
