@@ -81,7 +81,7 @@
                         <span class="product-available">In Stock</span>
                     </div>
                     <p>{{ $product[0]->extract }}</p>
-
+                    <!--
                     <div class="product-options">
                         <label>
                             Size
@@ -97,17 +97,15 @@
                         </label>
                     </div>
 
-                    <div class="add-to-cart">
-                        <div class="qty-label">
-                            Qty
-                            <div class="input-number">
-                                <input type="number">
-                                <span class="qty-up">+</span>
-                                <span class="qty-down">-</span>
-                            </div>
+                    <div class="qty-label">
+                        Qty
+                        <div class="input-number">
+                            <input type="number">
+                            <span class="qty-up">+</span>
+                            <span class="qty-down">-</span>
                         </div>
-                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> A&ntilde;adir al carrito</button>
                     </div>
+                    -->
                     <ul class="product-links">
                         <li>Categor&iacute;a:</li>
                         <li><a href="#">{{ $product[0]->category }}</a></li>
@@ -120,6 +118,13 @@
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                     </ul>
+                    </br>
+                    <div class="add-to-cart">
+                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> A&ntilde;adir al carrito</button>
+                    </div>
+                    <div class="add-to-cart">
+                        <button class="come-back-btn" onclick="window.location='{{ route('home') }}';"><i class="fa fa-chevron-circle-left"></i> Regresar</button>
+                    </div>
 
                 </div>
             </div>

@@ -37,7 +37,7 @@
                 <!-- /store top filter -->
 
                 <!-- store products -->
-                <div class="row">
+                <div class="row col-md-12">
                     @foreach($products as $product)
                         <!-- product -->
                         <div class="col-md-4 col-xs-6">

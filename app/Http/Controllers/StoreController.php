@@ -20,8 +20,8 @@ class StoreController extends Controller
 
     public function show($identifier, $slug)
     {
-        $product = DB::select('SELECT t1.*, t3.name AS category FROM products t1 LEFT JOIN categories t3 ON t1.category_id = t3.id WHERE t1.identifier = 1538939888');
-        $images  = DB::select('SELECT t1.identifier ,t2.* FROM images t2 LEFT JOIN products t1 ON t1.id = t2.product_id WHERE t1.identifier = 1538939888');
+        $product = DB::select('SELECT t1.*, t3.name AS category FROM products t1 LEFT JOIN categories t3 ON t1.category_id = t3.id WHERE t1.identifier ='.$identifier);
+        $images  = DB::select('SELECT t1.identifier ,t2.* FROM images t2 LEFT JOIN products t1 ON t1.id = t2.product_id WHERE t1.identifier ='.$identifier);
         //dd($product);
         return view('store.show')->with('product', $product)->with('images', $images);
 
