@@ -43,7 +43,7 @@
                         <div class="col-md-3 col-xs-6">
                             <div class="product">
                                 <div class="product-img">
-                                    <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->img1}}" alt="">
+                                    <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->image}}" alt="">
                                     <div class="product-label">
                                         <!--<span class="sale">-30%</span>-->
                                         @if($product->create_at < 5)

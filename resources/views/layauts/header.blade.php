@@ -119,7 +119,7 @@
                         </div>
                         <!-- /Cart -->
 
-                        <!-- Menu Toogle 
+                        <!-- Menu Toogle
                         <div class="menu-toggle">
                             <a href="#">
                                 <i class="fa fa-bars"></i>

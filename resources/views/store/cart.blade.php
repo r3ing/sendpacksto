@@ -21,6 +21,7 @@
 									<table class="table table-striped table-hover table-bordered">
 										<thead>
 										<tr>
+											<th>Imagen</th>
 											<th>Producto</th>
 											<th>Precio</th>
 											<th>Libras</th>
@@ -32,6 +33,7 @@
 										<tbody>
 										@foreach($cart as $item)
 											<tr>
+												<td><img src="{{ URL::to('/') }}/uploads/products/{{$item->identifier}}/{{$item->image}}" class="img-cart"></td>
 												<td>{{ $item->name }}</td>
 												<td>${{ number_format($item->price,2) }}</td>
 												<td>{{ number_format($item->weight * $item->quantity,0) }} lb</td>
