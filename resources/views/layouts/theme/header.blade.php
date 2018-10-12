@@ -8,10 +8,12 @@
                 <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
                 <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
             </ul>
+            <!--
             <ul class="header-links pull-right">
                 <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
                 <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
             </ul>
+            -->
         </div>
     </div>
     <!-- /TOP HEADER -->
@@ -51,24 +53,20 @@
                 <!-- ACCOUNT -->
                 <div class="col-md-3 clearfix">
                     <div class="header-ctn">
-                        <!-- Wishlist
-                        <div>
-                            <a href="#">
-                                <i class="fa fa-heart-o"></i>
-                                <span>Your Wishlist</span>
-                                <div class="qty">2</div>
-                            </a>
-                        </div>
-                        -->
-                        <!-- /Wishlist -->
 
                         <!-- Cart -->
                         <div>
                             <a href="{{  route('cart-show') }}">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>Your Cart</span>
+                                <span>Carrito</span>
                                 @if(\Session::has('cart') && sizeof(\Session::get('cart')) > 0)
-                                    <div class="qty"> {{ sizeof(\Session::get('cart')) }} </div>
+                                    @php
+                                        $qty = 0;
+                                        foreach(\Session::get('cart') as $item){
+                                            $qty = $qty + $item->quantity;
+                                        }
+                                    @endphp
+                                    <div class="qty"> @php echo $qty @endphp </div>
                                 @endif
                             </a>
                         </div>
@@ -78,10 +76,8 @@
                         <div class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>Your Cart</span>
-                                <div class="qty">3</div>
+                                <span>Carrito</span>
                             </a>
-                            <!--
                             <div class="cart-dropdown">
                                 <div class="cart-list">
                                     <div class="product-widget">
@@ -112,21 +108,11 @@
                                 </div>
                                 <div class="cart-btns">
                                     <a href="#">View Cart</a>
-                                    <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                                    <!--<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>-->
                                 </div>
                             </div>
-                            -->
                         </div>
                         <!-- /Cart -->
-
-                        <!-- Menu Toogle
-                        <div class="menu-toggle">
-                            <a href="#">
-                                <i class="fa fa-bars"></i>
-                                <span>Menu</span>
-                            </a>
-                        </div>
-                        <!-- /Menu Toogle -->
                     </div>
                 </div>
                 <!-- /ACCOUNT -->

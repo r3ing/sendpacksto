@@ -1,4 +1,4 @@
-@extends('layauts.master')
+@extends('layouts.theme.master')
 
 @section('content')
 
@@ -77,7 +77,8 @@
 								<hr>
 								<div>
 									<button class="come-back-btn" onclick="window.location='{{ route('home') }}';"><i class="fa fa-chevron-circle-left"></i> Seguir Comprando</button>
-									<button class="trash-cart-btn" onclick="window.location='{{ route('cart-trash') }}';"><i class="fa fa-trash"></i> Vaciar carrito</button>
+									<button class="trash-cart-btn" onclick="window.location='{{ route('cart-trash') }}';"><i class="fa fa-trash"></i> Vaciar Carrito</button>
+									<!--<button class="order-detail-btn" onclick="window.location='{{ route('order-detail') }}';"> Detalles Pedido <i class="fa fa-chevron-circle-right"></i></button>-->
 								</div>
 						@else
 							<h3><span class="label label-warning" style="border-radius: 0;!important;">No hay productos en el carrito.</span></h3>

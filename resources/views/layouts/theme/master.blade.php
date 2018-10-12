@@ -37,9 +37,9 @@
     </head>
 	<body>
 
-		@include('layauts.header')
+		@include('layouts.theme.header')
 
-		@include('layauts.navigation')
+		@include('layouts.theme.navigation')
 
 		<!-- include breadcrumb -->
 
@@ -60,9 +60,9 @@
 		</div>
 		<!-- /SECTION -->
 
-		@include('layauts.newsletter')
+		@include('layouts.theme.newsletter')
 
-		@include('layauts.footer')
+		@include('layouts.theme.footer')
 
 		<!-- jQuery Plugins -->
 		<script src="{{ asset('themes/electro-master/js/jquery.min.js') }}"></script>

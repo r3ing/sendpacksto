@@ -56,3 +56,18 @@ Route::get('cart/update/{product}/{quantity?}', [
     'as' => 'cart-update',
     'uses' => 'CartController@update'
 ]);
+
+Route::get('order-detail', [
+    'as' => 'order-detail',
+    'uses' => 'CartController@orderDetail'
+]);
+//===== End Cart ============//
+
+Route::prefix('admin')->group(function () {
+
+    Auth::routes();
+
+});
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
