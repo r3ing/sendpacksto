@@ -18,59 +18,61 @@
 						</p>
 						@if(count($cart))
 							<div class="table-responsive">
-									<table class="table table-striped table-hover table-bordered">
-										<thead>
+								<table class="table table-striped table-hover table-bordered">
+									<thead>
+									<tr>
+										<th>Imagen</th>
+										<th>Producto</th>
+										<th>Precio</th>
+										<th>Libras</th>
+										<th>Cantidad</th>
+										<th>Subtotal</th>
+										<th>Quitar</th>
+									</tr>
+									</thead>
+									<tbody>
+									@foreach($cart as $item)
 										<tr>
-											<th>Imagen</th>
-											<th>Producto</th>
-											<th>Precio</th>
-											<th>Libras</th>
-											<th>Cantidad</th>
-											<th>Subtotal</th>
-											<th>Quitar</th>
-										</tr>
-										</thead>
-										<tbody>
-										@foreach($cart as $item)
-											<tr>
-												<td><img src="{{ URL::to('/') }}/uploads/products/{{$item->identifier}}/{{$item->image}}" class="img-cart"></td>
-												<td>{{ $item->name }}</td>
-												<td>${{ number_format($item->price,2) }}</td>
-												<td>{{ number_format($item->weight * $item->quantity,0) }} lb</td>
-												<td>
-													<input
+											<td>
+												<img src="{{ URL::to('/') }}/uploads/products/{{$item->identifier}}/{{$item->image}}"
+													 class="img-cart"></td>
+											<td>{{ $item->name }}</td>
+											<td>${{ number_format($item->price,2) }}</td>
+											<td>{{ number_format($item->weight * $item->quantity,0) }} lb</td>
+											<td>
+												<input
 														type="number"
 														min="1"
 														max="100"
 														value="{{ $item->quantity }}"
 														id="product_{{ $item->id }}"
-													>
-													<a
+														>
+												<a
 														href="#"
 														class="btn btn-primary btn-update-item"
 														data-href="{{ route('cart-update', $item->identifier) }}"
-														data-id = "{{ $item->id }}"
+														data-id="{{ $item->id }}"
 														style="border-radius: 0;!important;">
-														<i class="fa fa-refresh"></i>
-													</a>
+													<i class="fa fa-refresh"></i>
+												</a>
 
-												</td>
-												<td>${{ number_format($item->price * $item->quantity,2) }}</td>
-												<td>
-													<a href="{{ route('cart-delete', $item->identifier) }}"
-													   class="btn btn-danger"
-													   style="border-radius: 0;!important;
-													   		  background: #D10014;
-    														  color: #ffffff;">
-														<i class="fa fa-remove"></i>
-													</a>
-												</td>
-											</tr>
-										@endforeach
-										</tbody>
-									</table><hr>
+											</td>
+											<td>${{ number_format($item->price * $item->quantity,2) }}</td>
+											<td>
+												<a href="{{ route('cart-delete', $item->identifier) }}"
+												   class="btn btn-danger"
+												   style="border-radius: 0;!important;background: #D10014;color: #ffffff;">
+													<i class="fa fa-remove"></i>
+												</a>
+											</td>
+										</tr>
+									@endforeach
+									</tbody>
+								</table>
+								<hr>
 
 							</div>
+
 								<div>
 									<h3><span class="label label-success" style="border-radius: 0;!important;">Total a pagar: ${{ number_format($total, 2) }}</span></h3>
 								</div>

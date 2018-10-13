@@ -63,11 +63,20 @@ Route::get('order-detail', [
 ]);
 //===== End Cart ============//
 
-Route::prefix('admin')->group(function () {
 
+Route::prefix('admin')->group(function () {
     Auth::routes();
 
+    Route::get('/logout', function(){
+        Auth::logout();
+        return redirect('/');
+    });
 });
 
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'], function(){
+
+    Route::resource('category', 'CategoryController');
+
+});
 
 //Route::get('/home', 'HomeController@index')->name('home');
