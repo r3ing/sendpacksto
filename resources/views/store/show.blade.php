@@ -11,29 +11,29 @@
             <!-- Product main img -->
             <div class="col-md-5 col-md-push-2">
                 <div id="product-main-img">
-                    @if(!empty($images[0]->img1))
+                    @if(!empty($product->images->img1))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img1}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img1}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img2))
+                    @if(!empty($product->images->img2))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img2}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img2}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img3))
+                    @if(!empty($product->images->img3))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img3}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img3}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img4))
+                    @if(!empty($product->images->img4))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img4}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img4}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img5))
+                    @if(!empty($product->images->img5))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img5}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img5}}" alt="">
                         </div>
                     @endif
                 </div>
@@ -43,29 +43,29 @@
             <!-- Product thumb imgs -->
             <div class="col-md-2  col-md-pull-5">
                 <div id="product-imgs">
-                    @if(!empty($images[0]->img1))
+                    @if(!empty($product->images->img1))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img1}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img1}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img2))
+                    @if(!empty($product->images->img2))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img2}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img2}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img3))
+                    @if(!empty($product->images->img3))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img3}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img3}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img4))
+                    @if(!empty($product->images->img4))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img4}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img4}}" alt="">
                         </div>
                     @endif
-                    @if(!empty($images[0]->img5))
+                    @if(!empty($product->images->img5))
                         <div class="product-preview">
-                            <img src="{{ URL::to('/') }}/uploads/products/{{$images[0]->identifier}}/{{$images[0]->img5}}" alt="">
+                            <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img5}}" alt="">
                         </div>
                     @endif
                 </div>
@@ -75,12 +75,12 @@
             <!-- Product details -->
             <div class="col-md-5">
                 <div class="product-details">
-                    <h2 class="product-name">{{ $product[0]->name }}</h2>
+                    <h2 class="product-name">{{ $product->name }}</h2>
                     <div>
-                        <h3 class="product-price">${{ $product[0]->price }}</h3>
+                        <h3 class="product-price">${{ $product->price }}</h3>
                         <span class="product-available">In Stock</span>
                     </div>
-                    <p>{{ $product[0]->extract }}</p>
+                    <p>{{ $product->extract }}</p>
                     <!--
                     <div class="product-options">
                         <label>
@@ -108,7 +108,7 @@
                     -->
                     <ul class="product-links">
                         <li>Categor&iacute;a:</li>
-                        <li><a href="#">{{ $product[0]->category }}</a></li>
+                        <li><a href="#">{{ $product->category->name }}</a></li>
                     </ul>
 
                     <ul class="product-links">
@@ -120,7 +120,7 @@
                     </ul>
                     </br>
                     <div class="add-to-cart">
-                        <button class="add-to-cart-btn" onclick="window.location='{{ route('cart-add', $product[0]->identifier) }}';"><i class="fa fa-shopping-cart"></i> A&ntilde;adir al carrito</button>
+                        <button class="add-to-cart-btn" onclick="window.location='{{ route('cart-add', $product->identifier) }}';"><i class="fa fa-shopping-cart"></i> A&ntilde;adir al carrito</button>
                     </div>
                     <div class="add-to-cart">
                         <button class="come-back-btn" onclick="window.location='{{ route('home') }}';"><i class="fa fa-chevron-circle-left"></i> Regresar</button>
@@ -145,7 +145,7 @@
                         <div id="tab1" class="tab-pane fade in active">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p>{{ $product[0]->description }}</p>
+                                    <p>{{ $product->description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                         <div id="tab2" class="tab-pane fade in">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p>{{ $product[0]->description }}</p>
+                                    <p>{{ $product->description }}</p>
                                 </div>
                             </div>
                         </div>

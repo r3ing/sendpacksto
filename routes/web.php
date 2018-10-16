@@ -18,8 +18,13 @@ Route::get('/', function () {
 
 //======== Dependency Injection ========//
 Route::bind('product', function($identifier){
-    //$product =
-    return App\Product::where('identifier', $identifier)->first();
+    $product = App\Product::where('identifier', $identifier)->first();
+    $product->each(function($product){
+        $product->category;
+        $product->images;
+    });
+    //return App\Product::where('identifier', $identifier)->first();
+    return $product;
 });
 Route::bind('category', function($category){
     return App\Category::find($category);

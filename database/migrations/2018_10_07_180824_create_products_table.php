@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->string('extract', 250);
             $table->decimal('price', 5, 2);
             $table->decimal('weight', 5, 2);
-            $table->string('image', 250);
             $table->boolean('visible');
             $table->string('identifier', 20);
             $table->integer('category_id')->unsigned();

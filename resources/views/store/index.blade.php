@@ -43,7 +43,7 @@
                         <div class="col-md-3 col-xs-6">
                             <div class="product">
                                 <div class="product-img">
-                                    <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->image}}" alt="">
+                                    <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img1}}" alt="">
                                     <div class="product-label">
                                         <!--<span class="sale">-30%</span>-->
                                         @if($product->create_at < 5)
@@ -53,7 +53,7 @@
 
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">{{ $product->category }}</p>
+                                    <p class="product-category">{{ $product->category->name }}</p>
                                     <h3 class="product-name"><a href="#">{{ $product->name }}</a></h3>
                                     <h4 class="product-price">${{ $product->price }}</h4>
                                     <div class="product-btns">

@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    //
+    // Relation with Product
+    public function product()
+    {
+        return $this->belongsTo('App\Product');
+    }
 }

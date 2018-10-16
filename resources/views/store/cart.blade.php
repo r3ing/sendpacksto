@@ -34,7 +34,7 @@
 									@foreach($cart as $item)
 										<tr>
 											<td>
-												<img src="{{ URL::to('/') }}/uploads/products/{{$item->identifier}}/{{$item->image}}"
+												<img src="{{ URL::to('/') }}/uploads/products/{{$item->identifier}}/{{$item->images->img1}}"
 													 class="img-cart"></td>
 											<td>{{ $item->name }}</td>
 											<td>${{ number_format($item->price,2) }}</td>
