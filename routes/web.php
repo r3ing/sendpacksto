@@ -15,10 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+
+//======== Dependency Injection ========//
 Route::bind('product', function($identifier){
     //$product =
     return App\Product::where('identifier', $identifier)->first();
 });
+Route::bind('category', function($category){
+    return App\Category::find($category);
+});
+//======== End Dependency Injection ========//
+
 
 Route::get('/', [
     'as'	=> 'home',
@@ -76,6 +83,10 @@ Route::prefix('admin')->group(function () {
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'], function(){
 
     Route::resource('category', 'CategoryController');
+    Route::get('category/{category}', [
+        'as' => 'category-destroy',
+        'uses' => 'CategoryController@destroy'
+    ]);
 
 });
 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use Illuminate\Support\Facades\DB;
+use Laracasts\Flash\Flash;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -15,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(10);//DB::table('categories')->paginate(10);//Category::all()->paginate(2);
         //dd($categories);
         return view('admin.category.index', compact('categories'));
     }
@@ -27,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -36,9 +39,25 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        //return $request->all();
+        //$this->validate($request, [
+          //  'name' => 'required|unique:categories|max:255'
+        //]);
+
+        $category = Category::create([
+            'name' => $request->get('name'),
+            'slug' => str_slug($request->get('name')),
+            'description' => $request->get('description')
+        ]);
+
+        if($category)
+            flash('Categor&iacutea agregada con exito!')->success();
+        else
+            flash('La Categor&iacutea NO pudo agregarse!')->error();
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -47,9 +66,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return $category;
     }
 
     /**
@@ -58,9 +77,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -70,9 +89,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, Category $category)
     {
-        //
+        $category->fill($request->all());
+        $category->slug = str_slug($request->get('name'));
+
+        $updated = $category->save();
+
+        if($updated)
+            flash('Categor&iacutea actualizada correctamente!')->success();
+        else
+            flash('La Categor&iacutea NO pudo actualizarse!')->error();
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -81,8 +110,18 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $deleted = $category->delete();
+
+        if($deleted)
+            flash('Categor&iacutea eliminada correctamente!!')->success();
+        else
+            flash('La Categor&iacutea NO pudo eliminarse!')->error();
+
+        return redirect()->route('category.index');
+        //*/
+        //dd($category);
     }
+
 }

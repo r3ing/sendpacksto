@@ -6,9 +6,20 @@
             <!-- responsive-nav -->
             <div id="responsive-nav">
                 <!-- NAV -->
+                @php
+                    $url = request()->path();
+                @endphp
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="">Home</a></li>
-                    <li class="{{ request()->is('admin/category') ? 'active' : '' }}"><a href="{{ route('category.index') }}">Categories</a></li>
+                    <li><a href="#">Home</a></li>
+                    <!--
+                    <li class="{{ request()->is('admin/category') ? 'active' : '' }}">
+                        <a href="{{ route('category.index') }}">Categories</a></li>
+                    -->
+                    <li @if(strstr($url, 'admin/category')) class="active" @endif>
+                        <a href="{{ route('category.index') }}">Categories</a>
+                    </li>
+
+
                     <li><a href="#">Products</a></li>
                 </ul>
                 <!-- /NAV -->

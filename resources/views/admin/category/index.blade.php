@@ -14,8 +14,7 @@
                 </div>
             </div>
             <div>
-                <!--<button class="order-detail-btn" onclick="window.location='{{ route('home') }}';"><i class="fa fa-chevron-circle-left"></i>A&ntilde;adir Categor&iacute;a</button>-->
-                <a href='#' class='btn btn-circle btn-default'><i class='fa fa-plus' style='color:#0066FF;'></i>  Categor&iacute;a</a><br>
+                <a class="btn add-btn" href="{{ route('category.create') }}"><i class="fa fa-plus"></i> A&ntilde;adir</a>
             </div>
             </br>
             <div class="table-responsive">
@@ -29,18 +28,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $item)
+                    @foreach($categories as $category)
                         <tr>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->description }}</td>
+                            <td>{{ $category->name }}</td>
+                            <td>{{ $category->description }}</td>
                             <td align ='center'>
-                                <a href='#' class='link'>
-                                <i class='fa fa-pencil' style='color:#0066FF;'></i>
+                                <a href='{{ route('category.edit',$category) }}' class='link'>
+                                    <i class='fa fa-pencil' style='color:#0066FF;'></i>
                                 </a>
                             </td>
                             <td align ='center'>
-                                <a href='#' class='link'>
-                                <i class='fa fa-times' style='color:#FF0000;'></i>
+                                <a href="{{ route('category-destroy',$category) }}" onclick="return confirm('Seguro que desea eliminar este registro?')" class='link'>
+                                    <i class='fa fa-times' style='color:#FF0000;font-size: 15px'></i>
                                 </a>
                             </td>
                             </td>
@@ -48,10 +47,11 @@
                     @endforeach
                     </tbody>
                 </table>
-                <hr>
-
+                <div class="pull-right">
+                    {{ $categories->render() }}
+                </div>
+                <!--<hr>-->
             </div>
-
 
         </div>
         <!-- /row -->

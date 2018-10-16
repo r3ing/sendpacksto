@@ -48,21 +48,20 @@
 														id="product_{{ $item->id }}"
 														>
 												<a
-														href="#"
-														class="btn btn-primary btn-update-item"
+														href=""
+														class="btn-link btn-update-item"
 														data-href="{{ route('cart-update', $item->identifier) }}"
 														data-id="{{ $item->id }}"
-														style="border-radius: 0;!important;">
-													<i class="fa fa-refresh"></i>
+														style="padding-left: 10px;">
+													<i class="fa fa-refresh" style="color:#0066FF;font-size:18px;"></i>
 												</a>
 
 											</td>
 											<td>${{ number_format($item->price * $item->quantity,2) }}</td>
 											<td>
 												<a href="{{ route('cart-delete', $item->identifier) }}"
-												   class="btn btn-danger"
-												   style="border-radius: 0;!important;background: #D10014;color: #ffffff;">
-													<i class="fa fa-remove"></i>
+												   class="btn-link">
+													<i class="fa fa-remove" style="color:#FF0000;font-size:18px;"></i>
 												</a>
 											</td>
 										</tr>
@@ -73,17 +72,16 @@
 
 							</div>
 
-								<div>
-									<h3><span class="label label-success" style="border-radius: 0;!important;">Total a pagar: ${{ number_format($total, 2) }}</span></h3>
+								<div><h3><span class="label label-success btn-circle">Total a pagar: ${{ number_format($total, 2) }}</span></h3>
 								</div>
 								<hr>
 								<div>
 									<button class="come-back-btn" onclick="window.location='{{ route('home') }}';"><i class="fa fa-chevron-circle-left"></i> Seguir Comprando</button>
 									<button class="trash-cart-btn" onclick="window.location='{{ route('cart-trash') }}';"><i class="fa fa-trash"></i> Vaciar Carrito</button>
-									<!--<button class="order-detail-btn" onclick="window.location='{{ route('order-detail') }}';"> Detalles Pedido <i class="fa fa-chevron-circle-right"></i></button>-->
+									<button class="order-detail-btn" onclick="window.location='{{ route('order-detail') }}';"> Detalles Pedido <i class="fa fa-chevron-circle-right"></i></button>
 								</div>
 						@else
-							<h3><span class="label label-warning" style="border-radius: 0;!important;">No hay productos en el carrito.</span></h3>
+							<h3><span class="label label-warning btn-circle">No hay productos en el carrito.</span></h3>
 						@endif
 					</div>
 				</div>

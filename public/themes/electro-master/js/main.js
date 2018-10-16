@@ -245,5 +245,11 @@
 		}
 	);
 
+	//$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+
+	setTimeout(function() {
+		$('#messages').fadeOut('fast');
+	}, 3000);
+
 
 })(jQuery);

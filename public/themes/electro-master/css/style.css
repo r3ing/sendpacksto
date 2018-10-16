@@ -2245,7 +2245,7 @@ textarea.input {
 
   height: 40px;
   padding: 0 30px;
-  background-color: #A0A6BC;/*#A0A6BC;/*rgba(160, 166, 188, 0.69);*/
+  background-color: #A0A6BC;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
@@ -2379,4 +2379,268 @@ textarea.input {
   border-radius:25px!important
 }
 
+/*================ btn forms ============================*/
+/*---------------------------*/
+.add-btn {
+  position: relative;
+  border: 2px solid transparent;
+  height: 30px;
+  padding: 0 30px;
+  background-color: #398439;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
 
+.add-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 27px;
+  color: #398439;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.add-btn:hover {
+  background-color: #FFF;
+  color: #398439;
+  border-color: #398439;
+  padding: 0px 25px 0px 45px;
+}
+
+.add-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+}
+/*---------------------------*/
+a.add-btn {
+  position: relative;
+  border: 2px solid transparent;
+  height: 30px;
+  padding: 0 30px;
+  background-color: #398439;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  line-height: 27px;
+}
+
+a.add-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 27px;
+  color: #398439;
+  opacity: 0;
+  visibility: hidden;
+}
+
+a.add-btn:hover {
+  background-color: #FFF;
+  color: #398439;
+  border-color: #398439;
+  padding: 0px 25px 0px 45px;
+}
+
+a.add-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+}
+/*---------------------------*/
+.save-btn {
+  position: relative;
+  border: 2px solid transparent;
+  height: 30px;
+  padding: 0 30px;
+  background-color: #006DCB;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.save-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 27px;
+  color: #006DCB;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.save-btn:hover {
+  background-color: #FFF;
+  color: #006DCB;
+  border-color: #006DCB;
+  padding: 0px 25px 0px 45px;
+}
+
+.save-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+}
+/*---------------------------*/
+a.cancel-btn {
+  position: relative;
+  border: 2px solid transparent;
+  height: 30px;
+  padding: 0 30px;
+  background-color: #EF7D19;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  line-height: 27px;
+}
+
+a.cancel-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 27px;
+  color: #EF7D19;
+  opacity: 0;
+  visibility: hidden;
+}
+
+a.cancel-btn:hover {
+  background-color: #FFF;
+  color: #EF7D19;
+  border-color: #EF7D19;
+  padding: 0px 25px 0px 45px;
+}
+
+a.cancel-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+}
+/*---------------------------*/
+/*================ end btn forms ============================*/
+/*================ btn table car ============================*/
+/*---------------------------*/
+a.refresh-car-btn1 {
+  border: 2px solid transparent;
+  height: 30px !important;
+  width: 50px!important;
+  background-color: #006DCB;
+  color: #ffffff;
+  border-radius:40px;
+}
+a.refresh-car-btn1:hover>i {
+  opacity: 1;
+  visibility: visible;
+  color: #ffffff;
+}
+/*---------------------------*/
+/*---------------------------*/
+.delete-car-btn1 {
+  height: 30px !important;
+  width: 50px!important;
+  background: #D10024;
+  color: #ffffff;
+  border-radius:25px!important
+}
+a.delete-car-btn1:hover>i {
+  opacity: 1;
+  visibility: visible;
+  color: #ffffff;
+}
+/*---------------------------*/
+/*================ btn table car ============================*/
+a.refresh-cart-btn {
+  position: relative;
+  border: 2px solid transparent;
+  height: 30px;
+  width: 45px;
+  border-color: #006DCB;
+  background: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  line-height: 27px;
+}
+
+a.refresh-cart-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 27px;
+  color: #006DCB;
+  opacity: 1;
+}
+
+a.refresh-cart-btn:hover {
+  background-color: #FFF;
+  color: #006DCB;
+  border-color: #006DCB;
+  padding: 0px 25px 0px 20px;
+}
+
+a.refresh-cart-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+  padding-left: 5px;
+}
+/*---------------------------*/
+a.delete-cart-btn {
+  position: relative;
+  border: 2px solid transparent;
+  height: 30px;
+  width: 45px;
+  border-color: #D10024;
+  background: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  line-height: 27px;
+}
+
+a.refresh-cart-btn>i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 27px;
+  color: #D10024;
+  opacity: 1;
+}
+
+a.refresh-cart-btn:hover {
+  background-color: #FFF;
+  color: #D10024;
+  border-color: #D10024;
+  padding: 0px 25px 0px 20px;
+}
+
+a.refresh-cart-btn:hover>i {
+  opacity: 1;
+  visibility: visible;
+  padding-left: 5px;
+}

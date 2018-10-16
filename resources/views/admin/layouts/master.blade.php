@@ -48,6 +48,14 @@
 		<!-- include breadcrumb -->
 
 		<!-- include newsletter -->
+		<div class="row">
+			<div class="container text-center">
+				<div id="messages" style="text-align:center; width:100%">
+					@include('flash::message')
+				</div>
+			</div>
+		</div>
+
 
 		@yield('content')
 
