@@ -19,7 +19,7 @@
                     {!! Form::open(['route'=>'category.store']) !!}
         
                         <div class="form-group">
-                            <label for="name">Nombre</label>
+                            <label class="control-label" for="name">Nombre</label>
                             {!! 
                                 Form::text(
                                     'name', 
@@ -35,7 +35,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="description">Descripción</label>
+                            <label class="control-label" for="description">Descripción</label>
                             {!! 
                                 Form::textarea(
                                     'description', 

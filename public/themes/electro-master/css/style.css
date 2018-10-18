@@ -2644,3 +2644,14 @@ a.refresh-cart-btn:hover>i {
   visibility: visible;
   padding-left: 5px;
 }
+
+.dashboard-icons{
+  color:#D10024;
+  font-size:40px;
+  padding-top:20px
+}
+
+.form-checkbox{
+  height: 25px !important;
+  width: 25px  !important;
+}

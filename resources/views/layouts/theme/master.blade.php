@@ -71,6 +71,7 @@
 		<script src="{{ asset('themes/electro-master/js/nouislider.min.js') }}"></script>
 		<script src="{{ asset('themes/electro-master/js/jquery.zoom.min.js') }}"></script>
 		<script src="{{ asset('themes/electro-master/js/main.js') }}"></script>
+		<script src="{{ asset('plugins/pinterest_grid.js') }}"></script>
 
 	</body>
 </html>

@@ -178,6 +178,7 @@
 		window.location.href = href + '/' + quantity;
 	});
 
+	/*
 	$("#table").dataTable(
 		{
 			language:
@@ -244,12 +245,34 @@
 			dom:"<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
 		}
 	);
+	*/
 
 	//$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
-
 	setTimeout(function() {
 		$('#messages').fadeOut('fast');
 	}, 3000);
+
+	$('.file-img').change(function () {
+		var file = $(this).val().toLowerCase(),
+			regex = new RegExp(/(.*?)\.(jpg|png|jpeg)$/);
+		if(file != null){
+			if(!regex.test(file)){
+				$(this).val('');
+				alert('Seleccione un archivo de tipo imagen');
+			}
+		}
+	});
+
+/*
+	$('#demo').pinterest_grid({
+		no_columns: 4,
+		padding_x: 10,
+		padding_y: 10,
+		margin_bottom: 50,
+		single_column_breakpoint: 700
+	});
+*/
+
 
 
 })(jQuery);

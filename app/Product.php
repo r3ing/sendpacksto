@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $table = 'products';
+    protected $fillable = ['name', 'slug', 'description', 'extract', 'price', 'weight', 'visible', 'identifier', 'category_id'];
+
     // Relation with Category
     public function category()
     {

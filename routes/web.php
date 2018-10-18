@@ -87,10 +87,20 @@ Route::prefix('admin')->group(function () {
 
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'], function(){
 
+    Route::get('dashboard', function(){
+        return view('admin.dashboard');
+    })->name('dashboard');
+
     Route::resource('category', 'CategoryController');
     Route::get('category/{category}', [
         'as' => 'category-destroy',
         'uses' => 'CategoryController@destroy'
+    ]);
+
+    Route::resource('product', 'ProductController');
+    Route::get('product/{product}', [
+        'as' => 'product-destroy',
+        'uses' => 'ProductController@destroy'
     ]);
 
 });

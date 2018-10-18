@@ -38,17 +38,23 @@
 
                 <!-- store products -->
                 <div class="row">
-                    @foreach($products as $product)
+                    @foreach($products as $i=>$product)
                         <!-- product -->
-                        <div class="col-md-3 col-xs-6">
+                        <div class="col-md-4 col-xs-6">
                             <div class="product">
                                 <div class="product-img">
                                     <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img1}}" alt="">
                                     <div class="product-label">
                                         <!--<span class="sale">-30%</span>-->
-                                        @if($product->create_at < 5)
+                                        @php
+                                            $date = $product->created_at;
+                                            $now  = Carbon\Carbon::now();
+                                            $diff =  $now->diffInDays($date);
+                                        @endphp
+                                        @if($diff < 5)
                                             <span class="new">NEW</span>
                                         @endif
+
                                     </div>
 
                                 </div>
@@ -67,6 +73,9 @@
                             </div>
                         </div>
                         <!-- /product -->
+                    @if($i % 2 == 0)
+                        <div class="clearfix visible-sm visible-xs"></div>
+                    @endif
                     @endforeach
                 </div>
                 <!-- /store products -->

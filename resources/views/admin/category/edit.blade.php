@@ -21,7 +21,7 @@
                         <input type="hidden" name="_method" value="PUT">
 
                         <div class="form-group">
-                            <label for="name">Nombre</label>
+                            <label class="control-label" for="name">Nombre</label>
                             {!! 
                                 Form::text(
                                     'name', 
@@ -36,7 +36,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="description">Descripci&oacute;n</label>
+                            <label class="control-label" for="description">Descripci&oacute;n</label>
                             {!! 
                                 Form::textarea(
                                     'description', 
