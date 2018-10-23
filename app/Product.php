@@ -20,4 +20,10 @@ class Product extends Model
     {
         return $this->hasOne('App\Image');
     }
+
+    // Relation with OrderItem
+    public function order_item()
+    {
+        return $this->hasOne('App\OrderItem');
+    }
 }

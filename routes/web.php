@@ -113,6 +113,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin
         'uses' => 'UserController@destroy'
     ]);
 
+    Route::resource('orders', 'OrderController');
+
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');
