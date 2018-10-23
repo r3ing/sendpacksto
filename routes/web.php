@@ -29,6 +29,10 @@ Route::bind('product', function($identifier){
 Route::bind('category', function($category){
     return App\Category::find($category);
 });
+
+Route::bind('user', function($user){
+    return App\User::find($user);
+});
 //======== End Dependency Injection ========//
 
 
@@ -101,6 +105,12 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin
     Route::get('product/{product}', [
         'as' => 'product-destroy',
         'uses' => 'ProductController@destroy'
+    ]);
+
+    Route::resource('user', 'UserController');
+    Route::get('user/{user}', [
+        'as' => 'user-destroy',
+        'uses' => 'UserController@destroy'
     ]);
 
 });

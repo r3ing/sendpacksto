@@ -23,6 +23,9 @@
                     <li @if(strstr($url, 'admin/product')) class="active" @endif>
                         <a href="{{ route('product.index') }}">Productos</a>
                     </li>
+                    <li @if(strstr($url, 'admin/user')) class="active" @endif>
+                        <a href="{{ route('user.index') }}">Usuarios</a>
+                    </li>
                 </ul>
                 <!-- /NAV -->
             </div>

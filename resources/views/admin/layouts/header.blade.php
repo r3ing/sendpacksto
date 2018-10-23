@@ -15,7 +15,7 @@
                 <!--<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <i class="fa fa-user-o"></i> {{ Auth::user()->user }} <span class="caret"></span>
+                        <i class="fa fa-user-o"></i> {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu header-links" role="menu">
                         <li><a href="{{ route('logout') }}">Finalizar sesi&oacute;n</a></li>

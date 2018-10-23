@@ -26,7 +26,7 @@
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa nombre...',
+                                        'placeholder' => 'Ingrese nombre...',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
@@ -42,7 +42,7 @@
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa descripción...',
+                                        'placeholder' => 'Ingrese descripción...',
                                     )
                                 ) 
                             !!}

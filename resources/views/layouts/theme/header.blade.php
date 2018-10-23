@@ -8,12 +8,34 @@
                 <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
                 <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
             </ul>
-            <!--
             <ul class="header-links pull-right">
+                <!--
                 <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
                 <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                -->
+                @if(Auth::check())
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fa fa-user-o"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            {{-- <li><a href="{{ route('logout') }}"></a></li> --}}
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Finalizar sesi&oacute;n</a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                        </ul>
+                    </li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fa fa-user-o"></i>Mi Cuenta <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ route('login') }}">Iniciar sesi&oacute;n</a></li>
+                            <li><a href="{{ route('register') }}">Registrarse</a></li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
-            -->
         </div>
     </div>
     <!-- /TOP HEADER -->
@@ -61,10 +83,10 @@
                                 <span>Carrito</span>
                                 @if(\Session::has('cart') && sizeof(\Session::get('cart')) > 0)
                                     @php
-                                        $qty = 0;
-                                        foreach(\Session::get('cart') as $item){
-                                            $qty = $qty + $item->quantity;
-                                        }
+                                    $qty = 0;
+                                    foreach(\Session::get('cart') as $item){
+                                    $qty = $qty + $item->quantity;
+                                    }
                                     @endphp
                                     <div class="qty"> @php echo $qty @endphp </div>
                                 @endif
@@ -109,17 +131,17 @@
                                 <div class="cart-btns">
                                     <a href="#">View Cart</a>
                                     <!--<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Cart -->
                     </div>
                 </div>
-                <!-- /ACCOUNT -->
             </div>
-            <!-- row -->
+            <!-- /Cart -->
         </div>
-        <!-- container -->
+    </div>
+    <!-- /ACCOUNT -->
+    </div>
+    <!-- row -->
+    </div>
+    <!-- container -->
     </div>
     <!-- /MAIN HEADER -->
 </header>
