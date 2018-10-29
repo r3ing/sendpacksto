@@ -10,11 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
+
+//use Illuminate\Support\Facades\Auth;
 
 //======== Dependency Injection ========//
 Route::bind('product', function($identifier){
@@ -81,53 +78,53 @@ Route::get('cart/update/{product}/{quantity?}', [
 Route::get('order-detail', [
     'as' => 'order-detail',
     'uses' => 'CartController@orderDetail'
-]);
+])->middleware('auth');
+
 //===== End Cart ============//
 
 
-Route::prefix('admin')->group(function () {
+//Route::prefix('admin')->group(function () {
     Auth::routes();
 
     Route::get('/logout', function(){
         Auth::logout();
         return redirect('/');
     });
-});
+//});
 
-Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'], function(){
+Route::group(['namespace' => 'Admin', 'middleware' => 'admin', 'prefix' => 'admin'], function(){
 
-    Route::get('dashboard', function(){
-        return view('admin.dashboard');
-    })->name('dashboard');
+        Route::get('/', function () {
+            return view('admin.dashboard');
+        })->name('dashboard');
 
-    Route::resource('category', 'CategoryController');
-    Route::get('category/{category}', [
-        'as' => 'category-destroy',
-        'uses' => 'CategoryController@destroy'
-    ]);
+        Route::resource('category', 'CategoryController');
+        Route::get('category/{category}', [
+            'as' => 'category-destroy',
+            'uses' => 'CategoryController@destroy'
+        ]);
 
-    Route::resource('product', 'ProductController');
-    Route::get('product/{product}', [
-        'as' => 'product-destroy',
-        'uses' => 'ProductController@destroy'
-    ]);
+        Route::resource('product', 'ProductController');
+        Route::get('product/{product}', [
+            'as' => 'product-destroy',
+            'uses' => 'ProductController@destroy'
+        ]);
 
-    Route::resource('user', 'UserController');
-    Route::get('user/{user}', [
-        'as' => 'user-destroy',
-        'uses' => 'UserController@destroy'
-    ]);
+        Route::resource('user', 'UserController');
+        Route::get('user/{user}', [
+            'as' => 'user-destroy',
+            'uses' => 'UserController@destroy'
+        ]);
 
-    Route::resource('orders', 'OrderController');
-    Route::get('orders/{order}', [
-        'as' => 'order-delivered',
-        'uses' => 'OrderController@delivered'
-    ]);
-    Route::post('orders/items', [
-        'as' => 'order-items',
-        'uses' => 'OrderController@getItems'
-    ]);
-
+        Route::resource('orders', 'OrderController');
+        Route::get('orders/{order}', [
+            'as' => 'order-delivered',
+            'uses' => 'OrderController@delivered'
+        ]);
+        Route::post('orders/items', [
+            'as' => 'order-items',
+            'uses' => 'OrderController@getItems'
+        ]);
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');

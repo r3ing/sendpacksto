@@ -133,8 +133,9 @@
                 table.html("");
 
                 for(var i = 0; i < data.length; i++){
+
                     var fila = "<tr>";
-                        fila += "<td><img src='" + data[i].product.image + "'\ width='30'></td>";
+                        fila += "<td align='center'><img src='"+"/uploads/products/"+data[i].product.identifier+"/"+data[i].product.images.img1 +"'\ width='40'></td>";
                         fila += "<td>" + data[i].product.name +"</td>";
                         fila += "<td>$" + parseFloat(data[i].price).toFixed(2) +"</td>";
                         fila += "<td>$" + parseInt(data[i].quantity) +"</td>";

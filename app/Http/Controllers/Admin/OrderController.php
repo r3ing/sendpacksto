@@ -88,7 +88,7 @@ class OrderController extends Controller
 
     public function getItems(Request $request)
     {
-        $items = OrderItem::with('product' => function($p){$p->images;})->where('order_id', $request->get('order_id'))->get();
+        $items = OrderItem::with('product.images')->where('order_id', $request->get('order_id'))->get();
         return json_encode($items);
     }
 

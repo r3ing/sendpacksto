@@ -20,7 +20,11 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             {{-- <li><a href="{{ route('logout') }}"></a></li> --}}
-                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Finalizar sesi&oacute;n</a></li>
+                            @if(Auth::user()->type == 'admin')
+                                <li><a href="{{ route('dashboard') }}"><i class="fa fa-cogs"></i> Dashboard</a></li>
+                            @endif
+
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Finalizar sesi&oacute;n</a></li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                         </ul>
                     </li>
@@ -30,8 +34,8 @@
                             <i class="fa fa-user-o"></i>Mi Cuenta <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('login') }}">Iniciar sesi&oacute;n</a></li>
-                            <li><a href="{{ route('register') }}">Registrarse</a></li>
+                            <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Iniciar sesi&oacute;n</a></li>
+                            <li><a href="{{ route('register') }}"><i class="fa fa-key"></i> Registrarse</a></li>
                         </ul>
                     </li>
                 @endif

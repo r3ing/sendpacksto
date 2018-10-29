@@ -18,7 +18,8 @@
                         <i class="fa fa-user-o"></i> {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu header-links" role="menu">
-                        <li><a href="{{ route('logout') }}">Finalizar sesi&oacute;n</a></li>
+                        <li><a href="{{ route('dashboard') }}"><i class="fa fa-cogs"></i> Dashboard</a></li>
+                        <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Finalizar sesi&oacute;n</a></li>
                     </ul>
                 </li>
             </ul>
