@@ -40,7 +40,7 @@
                 <div class="row">
                     @foreach($products as $i=>$product)
                         <!-- product -->
-                        <div class="col-md-4 col-xs-6">
+                        <div class="col-md-3 col-xs-6">
                             <div class="product">
                                 <div class="product-img">
                                     <img src="{{ URL::to('/') }}/uploads/products/{{$product->identifier}}/{{$product->images->img1}}" alt="">
@@ -73,9 +73,9 @@
                             </div>
                         </div>
                         <!-- /product -->
-                    @if($i % 2 == 0)
-                        <div class="clearfix visible-sm visible-xs"></div>
-                    @endif
+                        @if($i % 2 == 0)
+                            <!--<div class="clearfix visible-sm visible-xs"></div>-->
+                        @endif
                     @endforeach
                 </div>
                 <!-- /store products -->

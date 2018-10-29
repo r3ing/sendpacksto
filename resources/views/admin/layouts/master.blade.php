@@ -34,9 +34,20 @@
  		  <script src="{{ asset('themes/electro-master/js/respond.min.js') }}"></script>
  		<![endif]-->
 
-		<!-- TableDataTables -->
+		<!-- TableDataTables
 		<link href="{{ asset('plugins/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+		-->
+
+		<!--
+		<link href="{{ asset('plugins/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+		-->
+
+		<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
 
     </head>
 	<body>
@@ -84,12 +95,21 @@
 		<script src="{{ asset('themes/electro-master/js/jquery.zoom.min.js') }}"></script>
 		<script src="{{ asset('themes/electro-master/js/jquery.zoom.min.js') }}"></script>
 
+
+		<!--
+		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+		-->
+
+
 		<script src="{{ asset('plugins/datatables/datatable.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('plugins/datatables/dataTables.min.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('plugins/datatables/js/table.js') }}" type="text/javascript"></script>
 
+
 		<script src="{{ asset('themes/electro-master/js/main.js') }}"></script>
+		<script src="{{ asset('themes/electro-master/js/admin.js') }}"></script>
 
 	</body>
 </html>

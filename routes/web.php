@@ -26,12 +26,17 @@ Route::bind('product', function($identifier){
     //return App\Product::where('identifier', $identifier)->first();
     return $product;
 });
+
 Route::bind('category', function($category){
     return App\Category::find($category);
 });
 
 Route::bind('user', function($user){
     return App\User::find($user);
+});
+
+Route::bind('order', function($order){
+    return App\Order::find($order);
 });
 //======== End Dependency Injection ========//
 
@@ -114,6 +119,14 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin
     ]);
 
     Route::resource('orders', 'OrderController');
+    Route::get('orders/{order}', [
+        'as' => 'order-delivered',
+        'uses' => 'OrderController@delivered'
+    ]);
+    Route::post('orders/items', [
+        'as' => 'order-items',
+        'uses' => 'OrderController@getItems'
+    ]);
 
 });
 

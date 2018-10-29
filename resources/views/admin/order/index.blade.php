@@ -15,28 +15,36 @@
             </div>
             </br>
             <div class="table-responsive">
-                <table class="table table-striped table-hover table-bordered" id="">
+                <table class="table table-hover table-bordered" style="width:100%" id="table">
                     <thead>
-                    <tr class="active">
+                    <tr class="_focus">
                         <th>Fecha</th>
                         <th>Usuario</th>
                         <th>Total</th>
                         <th>Entregado</th>
-                        <th></th>
-                        <th></th>
+                        <th>Detalles</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($orders as $order)
                         <tr>
-                            <td>{{ $order->created_at }}</td>
+                            <td>{{ date('d-m-Y H:i:s', strtotime($order->created_at)) }}</td>
                             <td>{{ $order->user->name . ' ' . $order->user->last_name}}</td>
-                            <td>{{ $product->extract }}</td>
-                            <td>${{ number_format($product->price,2) }}</td>
-                            <td>{{ $product->visible == 1 ? "Si" : "No" }}</td>
+                            <td>${{ number_format($order->total,2) }}</td>
+                            <!--<td>{{ $order->delivered == 1 ? "Si" : "No" }}</td>-->
                             <td align ='center'>
-                                <a href='{{ route('product.edit', $product->identifier) }}' class='link'>
-                                    <i class='fa fa-pencil' style='color:#0066FF;'></i>
+                                @if($order->delivered == 1)
+                                    <i class='fa fa-check' style='color:#00FF00;'></i>
+                                @else
+                                <a href='{{ route('order-delivered', $order) }}' class='link'>
+                                    <i class='fa fa-ban' style='color:#FF0000;'></i>
+                                </a>
+                                @endif
+                            </td>
+                            <td align ='center'>
+                                <a href='#' data-id='{{$order->id}}' data-path='{{route('order-items')}}'
+                                   data-toggle='modal' data-target='#items' data-token='{{csrf_token()}}' class='link get-items'>
+                                    <i class='fa fa-search' style='color:#0066FF;'></i>
                                 </a>
                             </td>
                         </tr>
@@ -56,5 +64,7 @@
     <!-- /container -->
 </div>
 <!-- /SECTION -->
+
+@include('admin.order.items')
 
 @stop

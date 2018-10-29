@@ -18,9 +18,10 @@
             </div>
             </br>
             <div class="table-responsive">
-                <table class="table table-striped table-hover table-bordered" id="">
+                <!--<table class="table table-striped table-hover table-bordered" id="table">-->
+                <table class="table table-hover table-bordered" style="width:100%" id="table">
                     <thead>
-                    <tr class="active">
+                    <tr class="_focus">
                         <th>Imagen</th>
                         <th>Nombre</th>
                         <th>Categor&iacute;a</th>
@@ -55,9 +56,11 @@
                     </tbody>
 
                 </table>
+                <!--
                 <div class="pull-right">
                     {{ $products->render() }}
                 </div>
+                -->
                 <!--<hr>-->
             </div>
 

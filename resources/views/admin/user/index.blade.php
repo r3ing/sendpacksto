@@ -18,9 +18,9 @@
             </div>
             </br>
             <div class="table-responsive">
-                <table class="table table-striped table-hover table-bordered" id="">
+                <table class="table table-hover table-bordered" style="width:100%" id="table">
                     <thead>
-                    <tr class="active">
+                    <tr class="_focus">
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>Email</th>

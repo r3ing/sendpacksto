@@ -872,6 +872,7 @@ textarea.input {
 
 .product .product-img>img {
   width: 100%;
+  height: 90%;
 }
 
 .product .product-img .product-label {
@@ -1073,8 +1074,6 @@ textarea.input {
   opacity: 1;
   visibility: visible;
 }
-
-
 
 /*----------------------------*\
 	Widget product
@@ -2191,7 +2190,9 @@ textarea.input {
   }
 }
 
-
+/*===========================================================*/
+/*===========================================================*/
+/*===========================================================*/
 /*================ btn come-back ============================*/
 
 .product-details .add-to-cart .come-back-btn {
@@ -2655,3 +2656,13 @@ a.refresh-cart-btn:hover>i {
   height: 25px !important;
   width: 25px  !important;
 }
+
+
+._focus {
+    color: #006DCB;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+
+}
+

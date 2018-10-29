@@ -47,9 +47,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        //
+        return $order;
     }
 
     /**
@@ -81,8 +81,27 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
         //
+    }
+
+    public function getItems(Request $request)
+    {
+        $items = OrderItem::with('product' => function($p){$p->images;})->where('order_id', $request->get('order_id'))->get();
+        return json_encode($items);
+    }
+
+    public function delivered(Order $order)
+    {
+        $order->delivered = 1;
+        $saved = $order->save();
+
+        if($saved)
+            flash('Pedido actualizada correctamente!')->success();
+        else
+            flash('El Pedido NO pudo actualizarse!')->error();
+
+        return redirect()->route('orders.index');
     }
 }

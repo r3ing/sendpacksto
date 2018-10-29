@@ -8,7 +8,6 @@ class OrderItem extends Model {
 
     protected $table = 'order_items';
     protected $fillable = ['price', 'quantity', 'product_id', 'order_id'];
-    public $timestamps = false;
 
     // Relation with Order
     public function order() {
